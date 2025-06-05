@@ -1,10 +1,10 @@
 #!/bin/bash
 
-PEROSN1=$1
+PERSON1=$1
 PERSON2=$2
 
-echo "$PEROSN1 :: Hey PEROSN2, How are you ?"
-echo "$PEROSN2 :: Hello PEROSN1, I am fine, How are yopu doing"
-echo "$PEROSN1 :: I am fine too, What's up ?"
-echo "$PEROSN2 :: Nothing, Just going to Moon, for fun, Will you join ?"
-echo "$PEROSN1 :: Sorry, You carry on! I will come once you come back"
+echo "$PERSON1 :: Hey $PERSON2, How are you ?"
+echo "$PERSON2 :: Hello $PERSON1, I am fine, How are yopu doing"
+echo "$PERSON1 :: I am fine too, What's up ?"
+echo "$PERSON2 :: Nothing, Just going to Moon, for fun, Will you join ?"
+echo "$PERSON1 :: Sorry, You carry on! I will come once you come back"
