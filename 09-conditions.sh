@@ -10,6 +10,7 @@ read NUMBER
 # -ne --> not equal
 
 if [ $NUMBER -lt 100 ]
+then
     echo "You Entered the number is $NUMBER"
 else
     echo "As I TOLD EARLIER I KNOW THE NUMBERS upto 100"
