@@ -1,6 +1,6 @@
 #!/bin/bash
 
-R="\e[31m"
+R="\e[31m"      #30 = black, 34 = blue, 35 = magenta, 36 = cyan, 37 = white
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
