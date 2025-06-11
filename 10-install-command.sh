@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 
-if [ $USERID -ne 0 ]
+if [ $USERID -ne 0 ] #checking the file scritp having the root access or not
 then 
     echo "ERROR :: PLEASE RUN THE SCRIPT WITH ROOT ACCESS"
     exit 1
