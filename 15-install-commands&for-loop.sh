@@ -1,5 +1,6 @@
 #!/bin/bash
 
+USERID=$(id -u)
 R="\e[31m"      #30 = black, 34 = blue, 35 = magenta, 36 = cyan, 37 = white
 G="\e[32m"
 Y="\e[33m"
@@ -11,8 +12,6 @@ PACKAGES=("mysql" "python" "nginx" "http")
 
 mkdir -p $LOG_FOLDER
 echo "The Script was executing at $(date)" | tee -a $LOG_FILE
-
-USERID=$(id -u)
 
 if [ $USERID -ne 0 ] #checking the file scritp having the root access or not
 then 
