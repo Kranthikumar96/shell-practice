@@ -18,9 +18,9 @@ fi
 VALIDATE (){
     if [ $1 -eq 0 ]
     then
-        echo " $2 is $G SUCCESSFULLY INSTALLED $N"
+        echo "$2 is $G SUCCESSFULLY INSTALLED $N"
     else
-        echo " INSTALLING of $2 is $R FAILED $N"
+        echo "$R ERROR :: INSTALLING of $2 is FAILED $N"
         exit 1
     fi
 }
