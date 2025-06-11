@@ -21,7 +21,7 @@ else
     echo -e "$G YOU ARE RUNNIBG WITH ROOT ACCESS $N" | tee -a $LOG_FILE
 fi
 
-VALIDATE (){
+VALIDATE(){
     if [ $1 -eq 0 ]
     then
         echo -e "$G $2 is SUCCESSFULLY INSTALLED $N" | tee -a $LOG_FILE
