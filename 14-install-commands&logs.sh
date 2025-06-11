@@ -9,24 +9,24 @@ SCRIPT_NAME=$(echo $0|cut -d "." -f1)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME.log"
 
 mkdir -p $LOG_FOLDER
-echo "The Script was executing at $date" | tee -a $LOG_FILE
+echo "The Script was executing at $(date)" | tee -a $LOG_FILE
 
 USERID=$(id -u)
 
 if [ $USERID -ne 0 ] #checking the file scritp having the root access or not
 then 
-    echo "$R ERROR :: PLEASE RUN THE SCRIPT WITH ROOT ACCESS $N" | tee -a $LOG_FILE
+    echo -e "$R ERROR :: PLEASE RUN THE SCRIPT WITH ROOT ACCESS $N" | tee -a $LOG_FILE
     exit 1
 else
-    echo "$G YOU ARE RUNNIBG WITH ROOT ACCESS $N" | tee -a $LOG_FILE
+    echo -e "$G YOU ARE RUNNIBG WITH ROOT ACCESS $N" | tee -a $LOG_FILE
 fi
 
 VALIDATE (){
     if [ $1 -eq 0 ]
     then
-        echo "$2 is $G SUCCESSFULLY INSTALLED $N" | tee -a $LOG_FILE
+        echo -e "$G $2 is SUCCESSFULLY INSTALLED $N" | tee -a $LOG_FILE
     else
-        echo "$R ERROR :: INSTALLING of $2 is FAILED $N" | tee -a $LOG_FILE
+        echo -e "$R ERROR :: INSTALLING of $2 is FAILED $N" | tee -a $LOG_FILE
         exit 1
     fi
 }
@@ -34,29 +34,29 @@ VALIDATE (){
 dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
-    echo "$Y MYSQL is not INSTALLED going to INSTALL $N" | tee -a $LOG_FILE
+    echo -e "$Y MYSQL is not INSTALLED going to INSTALL $N" | tee -a $LOG_FILE
     dnf install mysql -y &>>$LOG_FILE
     VALIDATE $? "MYSQL"
 else
-    echo "$G MYSQL is already INSTALLED $N" | tee -a $LOG_FILE
+    echo -e "$G MYSQL is already INSTALLED $N" | tee -a $LOG_FILE
 fi 
 
 dnf list installed python3 &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
-    echo "$Y python3 is not INSTALLED going to INSTALL $N" | tee -a $LOG_FILE
+    echo -e "$Y python3 is not INSTALLED going to INSTALL $N" | tee -a $LOG_FILE
     dnf install python3 -y &>>$LOG_FILE
     VALIDATE $? "python3"
 else
-    echo "$G python3 is already INSTALLED $N" | tee -a $LOG_FILE
+    echo -e "$G python3 is already INSTALLED $N" | tee -a $LOG_FILE
 fi
 
 dnf list installed nginx &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
-    echo "$Y nginx is not INSTALLED going to INSTALL $N" | tee -a $LOG_FILE
+    echo -e "$Y nginx is not INSTALLED going to INSTALL $N" | tee -a $LOG_FILE
     dnf install nginx -y &>>$LOG_FILE
     VALIDATE $? "nginx"
 else
-    echo "$G nginx is already INSTALLED $N" | tee -a $LOG_FILE
+    echo -e "$G nginx is already INSTALLED $N" | tee -a $LOG_FILE
 fi
